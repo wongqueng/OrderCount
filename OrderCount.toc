@@ -1,0 +1,446 @@
+## Interface: 100205
+## Title: |cff00fe00OrderCount|r
+## Notes: 订单统计
+## Author: catcher
+## SavedVariables: OrderDB, OCItemInfoDB
+## Version: v1.0.0
+
+# External libraries
+External\EmbeddedLibs\LibStub\LibStub.lua
+External\EmbeddedLibs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+External\EmbeddedLibs\LibDataBroker-1.1\LibDataBroker-1.1.lua
+External\EmbeddedLibs\LibDBIcon-1.0\LibDBIcon-1.0.lua
+External\EmbeddedLibs\AceComm-3.0\AceComm-3.0.xml
+External\EmbeddedLibs\AceSerializer-3.0\AceSerializer-3.0.xml
+External\EmbeddedLibs\LibDeflate\LibDeflate.lua
+External\EmbeddedLibs\LibRealmInfo\LibRealmInfo.lua
+External\EmbeddedLibs\LibSerialize\LibSerialize.lua
+External\EmbeddedLibs\LibAHTab\LibAHTab.xml
+
+# 1st-party libraries
+External\LibOCClass\LibOCClass.lua
+
+# Our core init file
+LibOC\Core.lua
+
+# Initial LibOC utility files
+LibOC\Util\EnumType.lua
+
+# Environment file
+LibOC\Environment.lua
+
+# Locale file
+Locale\Core.lua
+Locale\zhCN.lua
+
+# LibOC data files
+LibOC\Data\BonusIds.lua
+LibOC\Data\ClassicRealms.lua
+LibOC\Data\DisenchantInfo.lua
+LibOC\Data\FontPaths.lua
+LibOC\Data\ItemClass.lua
+LibOC\Data\Mill.lua
+LibOC\Data\ProfessionInfo.lua
+LibOC\Data\Prospect.lua
+LibOC\Data\Transform.lua
+LibOC\Data\VendorSell.lua
+LibOC\Data\VendorTrade.lua
+
+
+
+# LibOC utility files
+LibOC\Util\String.lua
+LibOC\Util\SlotId.lua
+LibOC\Util\SmartMap.lua
+LibOC\Util\Sound.lua
+LibOC\Util\Debug.lua
+LibOC\Util\TempTable.lua
+LibOC\Util\Vararg.lua
+LibOC\Util\Table.lua
+LibOC\Util\Math.lua
+LibOC\Util\HSLuv.lua
+LibOC\Util\Color.lua
+LibOC\Util\FontObject.lua
+LibOC\Util\NineSlice.lua
+LibOC\Util\Money.lua
+LibOC\Util\CSV.lua
+LibOC\Util\JSON.lua
+LibOC\Util\ObjectPool.lua
+LibOC\Util\StringBuilder.lua
+LibOC\Util\NamedTupleListType.lua
+LibOC\Util\TreeType.lua
+LibOC\Util\ReactiveClasses\Publisher.lua
+LibOC\Util\ReactiveClasses\State.lua
+LibOC\Util\ReactiveClasses\StateSchema.lua
+LibOC\Util\ReactiveClasses\Stream.lua
+LibOC\Util\Reactive.lua
+LibOC\Util\DatabaseClasses\Constants.lua
+LibOC\Util\DatabaseClasses\Util.lua
+LibOC\Util\DatabaseClasses\QueryResultRow.lua
+LibOC\Util\DatabaseClasses\QueryClause.lua
+LibOC\Util\DatabaseClasses\Query.lua
+LibOC\Util\DatabaseClasses\DBTable.lua
+LibOC\Util\DatabaseClasses\Schema.lua
+LibOC\Util\Container.lua
+LibOC\Util\Database.lua
+LibOC\Util\ItemString.lua
+LibOC\Util\CraftString.lua
+LibOC\Util\RecipeString.lua
+LibOC\Util\MatString.lua
+LibOC\Util\Future.lua
+LibOC\Util\Wow.lua
+LibOC\Util\Theme.lua
+LibOC\Util\Log.lua
+LibOC\Util\ScriptWrapper.lua
+LibOC\Util\Analytics.lua
+LibOC\Util\Delay.lua
+LibOC\Util\TextureAtlas.lua
+LibOC\Util\FSMClasses\State.lua
+LibOC\Util\FSMClasses\Machine.lua
+LibOC\Util\FSM.lua
+LibOC\Util\Event.lua
+LibOC\Util\CustomStringClasses\Types.lua
+LibOC\Util\CustomStringClasses\Tokenizer.lua
+LibOC\Util\CustomStringClasses\Optimizer.lua
+LibOC\Util\CustomStringClasses\AST.lua
+LibOC\Util\CustomStringClasses\CodeGen.lua
+LibOC\Util\CustomStringClasses\String.lua
+LibOC\Util\CustomString.lua
+LibOC\Util\GroupPath.lua
+
+# LibOC service files
+LibOC\Service\ErrorHandler.lua
+LibOC\Service\DefaultUI.lua
+LibOC\Service\Threading.lua
+LibOC\Service\SlashCommands.lua
+LibOC\Service\Settings.lua
+LibOC\Service\PlayerInfo.lua
+LibOC\Service\ItemInfo.lua
+LibOC\Service\ItemLinked.lua
+LibOC\Service\ItemFilter.lua
+LibOC\Service\TooltipScanning.lua
+LibOC\Service\Conversions.lua
+LibOC\Service\CustomPrice.lua
+LibOC\Service\AuctionHouseWrapper.lua
+LibOC\Service\AuctionScanClasses\Util.lua
+LibOC\Service\AuctionScanClasses\ResultSubRow.lua
+LibOC\Service\AuctionScanClasses\ResultRow.lua
+LibOC\Service\AuctionScanClasses\Scanner.lua
+LibOC\Service\AuctionScanClasses\Query.lua
+LibOC\Service\AuctionScanClasses\QueryUtil.lua
+LibOC\Service\AuctionScanClasses\ScanManager.lua
+LibOC\Service\AuctionScan.lua
+LibOC\Service\ItemTooltipClasses\ExtraTip.lua
+LibOC\Service\ItemTooltipClasses\Builder.lua
+LibOC\Service\ItemTooltipClasses\Wrapper.lua
+LibOC\Service\ItemTooltip.lua
+LibOC\Service\BlackMarket.lua
+LibOC\Service\InventoryInfo.lua
+LibOC\Service\SyncClasses\Constants.lua
+LibOC\Service\SyncClasses\Comm.lua
+LibOC\Service\SyncClasses\Connection.lua
+LibOC\Service\SyncClasses\RPC.lua
+LibOC\Service\SyncClasses\Mirror.lua
+LibOC\Service\Sync.lua
+LibOC\Service\BagTracking.lua
+LibOC\Service\GuildTracking.lua
+LibOC\Service\AuctionTracking.lua
+LibOC\Service\MailTracking.lua
+LibOC\Service\AltTracking.lua
+LibOC\Service\Inventory.lua
+LibOC\Service\ProfessionHelpers\State.lua
+LibOC\Service\ProfessionHelpers\Quality.lua
+LibOC\Service\ProfessionHelpers\Scanner.lua
+LibOC\Service\Profession.lua
+
+
+
+# LibOC UI files
+LibOC\UI\UIUtils.lua
+LibOC\UI\WidgetExtensions.lua
+LibOC\UI\DragContext.lua
+LibOC\UI\Tooltip.lua
+LibOC\UI\UIElements.lua
+LibOC\UI\SyntaxHelpers.lua
+LibOC\UI\Rectangle.lua
+LibOC\UI\UIManager.lua
+
+# Constant data files (no dependencies)
+Core\Const\__init.lua
+
+# Lib files which only depend on Util files
+Core\Lib\Addon.lua
+Core\Lib\AppHelper.lua
+
+# Main addon file
+main.lua
+
+# UI files (depend on main addon file being loaded)
+Core\UI\UI.lua
+Core\UI\Scrollbar.lua
+Core\UI\FrameStack.lua
+Core\UI\WhatsNew.lua
+
+Core\UI\Util\Core.lua
+Core\UI\Util\Contacts.lua
+Core\UI\Util\TableRow.lua
+Core\UI\Util\ScrollingTableInfo.lua
+Core\UI\Util\QueryScrollingTableInfo.lua
+
+Core\UI\Components\Core\Element.lua
+Core\UI\Components\Core\Spacer.lua
+
+Core\UI\Components\Display\Text.lua
+Core\UI\Components\Display\Texture.lua
+Core\UI\Components\Display\ProgressBar.lua
+Core\UI\Components\Display\Graph.lua
+Core\UI\Components\Display\VerticalLine.lua
+Core\UI\Components\Display\HorizontalLine.lua
+
+Core\UI\Components\Controls\ActionButton.lua
+Core\UI\Components\Controls\SecureMacroActionButton.lua
+Core\UI\Components\Controls\Button.lua
+Core\UI\Components\Controls\Checkbox.lua
+Core\UI\Components\Controls\EditableText.lua
+Core\UI\Components\Controls\RangeInput.lua
+Core\UI\Components\Controls\Toggle.lua
+Core\UI\Components\Controls\ToggleYesNo.lua
+Core\UI\Components\Controls\SyntaxInput.lua
+Core\UI\Components\Controls\ItemButton.lua
+
+Core\UI\Components\List\ListRow.lua
+Core\UI\Components\List\List.lua
+Core\UI\Components\List\ItemList.lua
+Core\UI\Components\List\CraftingMatList.lua
+Core\UI\Components\List\SelectionList.lua
+
+Core\UI\Components\Containers\Container.lua
+Core\UI\Components\Containers\ViewContainer.lua
+Core\UI\Components\Containers\TabGroup.lua
+
+Core\UI\Elements\GroupSelector.lua
+Core\UI\Elements\BaseDropdown.lua
+Core\UI\Elements\SelectionDropdown.lua
+Core\UI\Elements\MultiselectionDropdown.lua
+Core\UI\Elements\BaseInput.lua
+Core\UI\Elements\Input.lua
+Core\UI\Elements\MultiLineInput.lua
+
+Core\UI\Views\Core.lua
+Core\UI\Views\PlayerGoldText.lua
+Core\UI\Views\CustomStringDialog.lua
+
+Core\UI\Elements\Frame.lua
+Core\UI\Elements\PopupFrame.lua
+Core\UI\Elements\AlphaAnimatedFrame.lua
+Core\UI\Elements\ApplicationFrame.lua
+Core\UI\Elements\LargeApplicationFrame.lua
+Core\UI\Elements\OverlayApplicationFrame.lua
+Core\UI\Elements\ScrollFrame.lua
+Core\UI\Elements\DividedContainer.lua
+Core\UI\Elements\CollapsibleContainer.lua
+
+Core\UI\Elements\ScrollingTable.lua
+Core\UI\Elements\GroupTree.lua
+Core\UI\Elements\ApplicationGroupTree.lua
+Core\UI\Elements\ManagementGroupTree.lua
+Core\UI\Elements\SelectionGroupTree.lua
+Core\UI\Elements\CraftingQueueList.lua
+Core\UI\Elements\SearchList.lua
+Core\UI\Elements\DropdownList.lua
+Core\UI\Elements\CommodityList.lua
+Core\UI\Elements\OperationTree.lua
+Core\UI\Elements\QueryScrollingTable.lua
+Core\UI\Elements\MyAuctionsScrollingTable.lua
+Core\UI\Elements\SelectionScrollingTable.lua
+Core\UI\Elements\AuctionScrollingTable.lua
+Core\UI\Elements\SniperScrollingTable.lua
+Core\UI\Elements\ProfessionScrollingTable.lua
+
+
+Core\UI\Support\TexturePacks.lua
+
+
+Core\UI\MainUI\Core.lua
+Core\UI\MainUI\OrderHistory\Core.lua
+
+
+# Core\UI\Components\Crafting\CraftDetails.lua
+# Core\UI\Components\Crafting\CraftTierButton.lua
+# Core\UI\Components\Crafting\ItemSelector.lua
+# Core\UI\Components\Crafting\CraftTierDialog.lua
+# Core\UI\Components\Crafting\OptionalMatsRow.lua
+
+
+# Core\UI\AuctionUI\Core.lua
+# Core\UI\AuctionUI\BuyUtil.lua
+# Core\UI\AuctionUI\Shopping.lua
+# Core\UI\AuctionUI\Auctioning.lua
+# Core\UI\AuctionUI\Sniper.lua
+# Core\UI\AuctionUI\MyAuctions.lua
+
+# Core\UI\DestroyingUI\Core.lua
+
+# Core\UI\CraftingUI\Core.lua
+# Core\UI\CraftingUI\Crafting.lua
+# Core\UI\CraftingUI\Gathering.lua
+# Core\UI\CraftingUI\CraftingReports.lua
+
+# Core\UI\MailingUI\Core.lua
+# Core\UI\MailingUI\Inbox.lua
+# Core\UI\MailingUI\Send.lua
+# Core\UI\MailingUI\Groups.lua
+# Core\UI\MailingUI\Other.lua
+
+# Core\UI\VendoringUI\Core.lua
+# Core\UI\VendoringUI\Buy.lua
+# Core\UI\VendoringUI\Sell.lua
+# Core\UI\VendoringUI\Buyback.lua
+# Core\UI\VendoringUI\Groups.lua
+
+# Core\UI\MainUI\Dashboard.lua
+
+# Core\UI\MainUI\Ledger\Core.lua
+# Core\UI\MainUI\Ledger\Inventory.lua
+# Core\UI\MainUI\Ledger\Common\Core.lua
+# Core\UI\MainUI\Ledger\Common\Transactions.lua
+# Core\UI\MainUI\Ledger\Common\Other.lua
+# Core\UI\MainUI\Ledger\Revenue\Core.lua
+# Core\UI\MainUI\Ledger\Revenue\Resale.lua
+# Core\UI\MainUI\Ledger\Expenses\Core.lua
+# Core\UI\MainUI\Ledger\FailedAuctions\Core.lua
+# Core\UI\MainUI\Ledger\Common\Auctions.lua
+
+# Core\UI\MainUI\Groups.lua
+
+# Core\UI\MainUI\Operations\Core.lua
+# Core\UI\MainUI\Operations\Auctioning.lua
+# Core\UI\MainUI\Operations\Shopping.lua
+# Core\UI\MainUI\Operations\Sniper.lua
+# Core\UI\MainUI\Operations\Crafting.lua
+# Core\UI\MainUI\Operations\Vendoring.lua
+# Core\UI\MainUI\Operations\Mailing.lua
+# Core\UI\MainUI\Operations\Warehousing.lua
+
+# Core\UI\MainUI\Settings\Core.lua
+# Core\UI\MainUI\Settings\General.lua
+# Core\UI\MainUI\Settings\Accounting.lua
+# Core\UI\MainUI\Settings\Appearance.lua
+# Core\UI\MainUI\Settings\Auctioning.lua
+# Core\UI\MainUI\Settings\Destroying.lua
+# Core\UI\MainUI\Settings\Mailing.lua
+# Core\UI\MainUI\Settings\CustomSources.lua
+# Core\UI\MainUI\Settings\Crafting.lua
+# Core\UI\MainUI\Settings\Macros.lua
+# Core\UI\MainUI\Settings\Shopping.lua
+# Core\UI\MainUI\Settings\Vendoring.lua
+# Core\UI\MainUI\Settings\Tooltip.lua
+
+# Core\UI\TaskListUI\Core.lua
+
+# Core\UI\BankingUI\Core.lua
+
+Core\UI\Debug\DBViewer.lua
+Core\UI\Debug\StoryBoard.lua
+
+
+# Service files (depend on main addon file being loaded)
+# Core\Service\Operations\Core.lua
+# Core\Service\Operations\Auctioning.lua
+# Core\Service\Operations\Crafting.lua
+# Core\Service\Operations\Mailing.lua
+# Core\Service\Operations\Shopping.lua
+# Core\Service\Operations\Sniper.lua
+# Core\Service\Operations\Vendoring.lua
+# Core\Service\Operations\Warehousing.lua
+# Core\Service\Groups\Core.lua
+# Core\Service\Groups\Sync.lua
+# Core\Service\Groups\ImportExport.lua
+# Core\Service\Accounting\Core.lua
+# Core\Service\Accounting\Money.lua
+# Core\Service\Accounting\Auctions.lua
+# Core\Service\Accounting\Transactions.lua
+# Core\Service\Accounting\GoldTracker.lua
+# Core\Service\Accounting\Garrison.lua
+# Core\Service\Accounting\Mail.lua
+# Core\Service\Accounting\Merchant.lua
+# Core\Service\Accounting\Trade.lua
+# Core\Service\Accounting\Sync.lua
+# Core\Service\Auctioning\Core.lua
+# Core\Service\Auctioning\CancelScan.lua
+# Core\Service\Auctioning\Log.lua
+# Core\Service\Auctioning\PostScan.lua
+# Core\Service\Auctioning\SavedSearches.lua
+# Core\Service\Auctioning\Util.lua
+# Core\Service\Crafting\Core.lua
+# Core\Service\Crafting\PlayerProfessions.lua
+# Core\Service\Crafting\ProfessionScanner.lua
+# Core\Service\Crafting\ProfessionUtil.lua
+# Core\Service\Crafting\Cost.lua
+# Core\Service\Crafting\Queue.lua
+# Core\Service\Crafting\Gathering.lua
+# Core\Service\Crafting\Sync.lua
+# Core\Service\Crafting\DFCrafting.lua
+# Core\Service\Destroying\Core.lua
+# Core\Service\Mailing\Core.lua
+# Core\Service\Mailing\Inbox.lua
+# Core\Service\Mailing\Open.lua
+# Core\Service\Mailing\Send.lua
+# Core\Service\Mailing\Groups.lua
+# Core\Service\Vendoring\Core.lua
+# Core\Service\Vendoring\Buy.lua
+# Core\Service\Vendoring\Buyback.lua
+# Core\Service\Vendoring\Sell.lua
+# Core\Service\Vendoring\Groups.lua
+# Core\Service\MyAuctions\Core.lua
+# Core\Service\Sniper\Core.lua
+# Core\Service\Sniper\BidSearch.lua
+# Core\Service\Sniper\BuyoutSearch.lua
+# Core\Service\TaskList\Core.lua
+# Core\Service\TaskList\Tasks\Task.lua
+# Core\Service\TaskList\Tasks\ItemTask.lua
+# Core\Service\TaskList\Tasks\CraftingTask.lua
+# Core\Service\TaskList\Tasks\CooldownCraftingTask.lua
+# Core\Service\TaskList\Tasks\ExpiredAuctionTask.lua
+# Core\Service\TaskList\Tasks\ExpiringMailTask.lua
+# Core\Service\TaskList\Tasks\ShoppingTask.lua
+# Core\Service\TaskList\Tasks\VendoringTask.lua
+# Core\Service\TaskList\Tasks\BankingTask.lua
+# Core\Service\TaskList\Tasks\AltTask.lua
+# Core\Service\TaskList\Tasks\SendMailTask.lua
+# Core\Service\TaskList\Tasks\OpenMailTask.lua
+# Core\Service\TaskList\Cooldowns.lua
+# Core\Service\TaskList\Expirations.lua
+# Core\Service\TaskList\Gathering.lua
+# Core\Service\Banking\Core.lua
+# Core\Service\Banking\Util.lua
+# Core\Service\Banking\MoveContext.lua
+# Core\Service\Banking\Warehousing.lua
+# Core\Service\Banking\Mailing.lua
+# Core\Service\Banking\Auctioning.lua
+# Core\Service\Tooltip\Core.lua
+# Core\Service\Tooltip\General.lua
+# Core\Service\Tooltip\Accounting.lua
+# Core\Service\Tooltip\AuctionDB.lua
+# Core\Service\Tooltip\Auctioning.lua
+# Core\Service\Tooltip\Crafting.lua
+# Core\Service\Tooltip\Shopping.lua
+# Core\Service\Tooltip\Sniper.lua
+# Core\Service\AuctionDB\Core.lua
+# Core\Service\Shopping\Core.lua
+# Core\Service\Shopping\DisenchantSearch.lua
+# Core\Service\Shopping\FilterSearch.lua
+# Core\Service\Shopping\GreatDealsSearch.lua
+# Core\Service\Shopping\GroupSearch.lua
+# Core\Service\Shopping\SavedSearches.lua
+# Core\Service\Shopping\SearchCommon.lua
+# Core\Service\Shopping\VendorSearch.lua
+Core\Service\OrderLog\Core.lua
+
+# Public APIs
+Core\API.lua
+
+# Development files
+Core\Development\Core.lua
+Core\Development\Profiling.lua
+Core\Development\Tracing.lua
