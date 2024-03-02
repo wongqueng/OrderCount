@@ -55,6 +55,7 @@ function private.GetOrderHistoryFrame()
     private.query:Reset()
            :OrderBy("time", false)
     private.UpdateQuery()
+    --print(OrderLog.GetMoenySum())
     return UIElements.New("Frame", "content")
                      :SetLayout("VERTICAL")
                      :AddChild(UIElements.New("Frame", "row1")
@@ -160,7 +161,7 @@ function private.GetOrderHistoryFrame()
     )                                       :AddChild(UIElements.New("VerticalLine", "line")
                                                                 :SetMargin(4, 8, 0, 0)
     )
-                                            :AddChild(UIElements.New("Text", "profit")
+                                            :AddChild(UIElements.New("Text", "incomeSum")
                                                                 :SetWidth("AUTO")
                                                                 :SetFont("BODY_BODY2_MEDIUM")
                                                                 :SetText("总收入："..Money.ToString(OC.OrderLog.GetMoenySum(), nil, "OPT_RETAIL_ROUND"))
@@ -182,7 +183,13 @@ function private.DropdownCommonOnSelectionChanged(dropdown)
     dropdown:GetElement("__parent.__parent.scrollingTable")
             :UpdateData(true)
     local footer = dropdown:GetElement("__parent.__parent.footer")
-    footer:GetElement("num"):SetText("")
+    footer:GetElement("num"):SetText("完成订单数："..tostring(private.query:Count()))
+    local sum = 0
+    for _, row in private.query:Iterator() do
+       local commission= row:GetField("commission")
+        sum = sum + commission
+    end
+    footer:GetElement("incomeSum"):SetText("总收入："..Money.ToString(sum, nil, "OPT_RETAIL_ROUND"))
     footer:Draw()
 end
 
@@ -196,7 +203,7 @@ function private.UpdateQuery()
     if private.searchFilter ~= "" then
         private.query:Matches("item", String.Escape(private.searchFilter))
     end
-    if Table.Count(private.characterFilter) ~= #private.characters then
+    if Table.Count(private.characterFilter) ~=Table.Count(private.characters) then
         private.query:InTable("player", private.characterFilter)
     end
     if private.timeFrameFilter ~= 0 then
