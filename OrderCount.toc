@@ -32,6 +32,7 @@ LibOC\Environment.lua
 # Locale file
 Locale\Core.lua
 Locale\zhCN.lua
+Locale\zhTW.lua
 
 # LibOC data files
 LibOC\Data\BonusIds.lua
