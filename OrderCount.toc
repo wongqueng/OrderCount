@@ -148,10 +148,10 @@ LibOC\Service\AuctionTracking.lua
 LibOC\Service\MailTracking.lua
 LibOC\Service\AltTracking.lua
 LibOC\Service\Inventory.lua
-LibOC\Service\ProfessionHelpers\State.lua
-LibOC\Service\ProfessionHelpers\Quality.lua
-LibOC\Service\ProfessionHelpers\Scanner.lua
-LibOC\Service\Profession.lua
+# LibOC\Service\ProfessionHelpers\State.lua
+# LibOC\Service\ProfessionHelpers\Quality.lua
+# LibOC\Service\ProfessionHelpers\Scanner.lua
+# LibOC\Service\Profession.lua
 
 
 

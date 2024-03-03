@@ -204,6 +204,6 @@ function OrderLog.InsertRecord(item, orderType, client, commission, quantity, ti
 			:SetField("saveTime", 0)
 			:SetField("isCurrentRealm", true)
 			:Create()
-		print(OrderLog.GetNum())
+		--print(OrderLog.GetNum())
 	end
 end

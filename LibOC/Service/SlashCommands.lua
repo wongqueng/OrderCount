@@ -33,8 +33,6 @@ end)
 -- ============================================================================
 
 function SlashCommands.Register(key, callback, label)
-	print("SlashCommands.Register")
-	print(key and callback)
 	assert(key and callback)
 	local keyLower = strlower(key)
 	private.commandInfo[keyLower] = {
@@ -42,7 +40,6 @@ function SlashCommands.Register(key, callback, label)
 		label = label,
 		callback = callback,
 	}
-	print(private.commandInfo[""])
 	tinsert(private.commandOrder, keyLower)
 end
 
@@ -67,13 +64,10 @@ end
 -- ============================================================================
 
 function private.OnChatCommand(input)
-	print("private.OnChatCommand")
-	print(input)
 	input = strtrim(input)
 	local cmd, args = strmatch(input, "^([^ ]*) ?(.*)$")
 	cmd = strlower(cmd)
 	if private.commandInfo[cmd] then
-		print(private.commandInfo[cmd] )
 		local startTime = GetTimePreciseSec()
 		private.commandInfo[cmd].callback(args)
 		local timeTaken = GetTimePreciseSec() - startTime

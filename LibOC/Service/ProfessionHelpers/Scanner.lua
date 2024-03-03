@@ -754,7 +754,7 @@ function private.ScanProfession()
 		private.matDB:BulkInsertEnd()
 		private.db:BulkInsertEnd()
 		private.dbPopulated = true
-		if next(inactiveCraftStrings) then
+		if next(inactiveCraftStrings) and private.inactiveFunc~=nil then
 			private.inactiveFunc(inactiveCraftStrings)
 		end
 		TempTable.Release(inactiveCraftStrings)

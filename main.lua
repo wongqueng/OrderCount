@@ -1,5 +1,5 @@
-print("hehe")
-OrderDB={}
+--print("hehe")
+
 
 local OC = select(2, ...) ---@type OC
 local Log = OC.Include("Util.Log")
@@ -19,7 +19,6 @@ local LOGOUT_TIME_WARNING_THRESHOLD = 0.02
 -- ============================================================================
 
 function OC.OnInitialize()
-    print(" OC.OnInitialize")
     -- Load settings
     OC.db = Settings.GetDB()
     private.settings = Settings.NewView()
@@ -74,24 +73,20 @@ function OC.OnInitialize()
         --print(...)
         local args = { ... }
         local msg_type = args[1]
-        print(args[1]) --消息类型
-        print(args[2]) --订单类型，个人还是公开
-        print(args[3])  --商品
-        print(args[4])  --客户名
-        print(args[5])  --税后佣金  铜计价
-        print(args[6])  --数量
+        --print(args[1]) --消息类型
+        --print(args[2]) --订单类型，个人还是公开
+        --print(args[3])  --商品
+        --print(args[4])  --客户名
+        --print(args[5])  --税后佣金  铜计价
+        --print(args[6])  --数量
         if msg_type == "ADDON_LOADED" and args[2]=="OrderCount" then
 
         elseif msg_type == "CRAFTINGORDERS_DISPLAY_CRAFTER_FULFILLED_MSG" then
-            print("pre  insert data")
-            print(OC.OrderLog.InsertRecord)
             OC.OrderLog.InsertRecord(args[3],args[2],args[4],args[5],args[6],time())
         end
 
 
     end)
-    print("oc load")
-
     -- force a garbage collection
     collectgarbage()
 end

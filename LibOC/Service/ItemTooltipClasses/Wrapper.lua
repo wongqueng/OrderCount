@@ -205,7 +205,7 @@ function private.SetTooltipItem(tooltip, link)
 	local reg = private.tooltipRegistry[tooltip]
 	local quantity = max(IsShiftKeyDown() and reg.quantity or 1, 1)
 	local isCached = private.builder:_Prepare(itemString, quantity)
-	if not isCached then
+	if not isCached and private.populateFunc ~=nil then
 		-- populate all the lines
 		private.populateFunc(private.builder, itemString)
 	end

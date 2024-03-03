@@ -13,7 +13,7 @@ local CraftString = OC.Include("Util.CraftString")
 local String = OC.Include("Util.String")
 local Event = OC.Include("Util.Event")
 local ItemInfo = OC.Include("Service.ItemInfo")
-local Profession = OC.Include("Service.Profession")
+--local Profession = OC.Include("Service.Profession")
 local private = {
 	currentParent = nil,
 	registeredEvent = false,
@@ -88,10 +88,10 @@ function Tooltip.Show(parent, data, noWrapping, xOffset)
 			end
 			GameTooltip:SetRecipeResultItem(spellId, private.optionalMatTable, nil, level)
 		else
-			local index = Profession.GetIndexByCraftString(CraftString.Get(spellId))
-			if index then
-				GameTooltip:SetTradeSkillItem(index)
-			end
+			--local index = Profession.GetIndexByCraftString(CraftString.Get(spellId))
+			--if index then
+			--	GameTooltip:SetTradeSkillItem(index)
+			--end
 		end
 	elseif type(data) == "string" and (strfind(data, "^\124c.+\124Hitem:") or ItemString.IsItem(data)) then
 		GameTooltip:SetHyperlink(ItemInfo.GetLink(data))
